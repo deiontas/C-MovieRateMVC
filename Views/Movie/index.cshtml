@@ -1,0 +1,36 @@
+@model List<MovieEntity>
+
+@{
+    ViewData["Title"] = "Movies";
+}
+
+<h2>Movies</h2>
+
+
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <a asp-action="Create" asp-controller="Movie" class="btn btn-success">Create Movie</a>
+    </div>
+</div>
+
+<div class = "row">
+    <div class = "col-md-12">
+        <table class = "table">
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Year</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model){
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Year</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
